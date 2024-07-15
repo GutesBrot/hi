@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# Tailwind CSS output file
+output.css
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
