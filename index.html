@@ -2,11 +2,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hi Gutes Brot</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="output.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Title of this simple page</h1>
+    <nav class="sm:px-16 px-6 w-full flex items-center py-5 fixed top-0 z-20 bg-white bg-opacity-60 backdrop-blur">
+        <div class="w-full flex justify-between items-center mx-auto">
+            <a class="flex items-center gap-2" href="/">
+                <img src="assets/logo.png" alt="logo" class="w-9 h-9 object-contain">
+                <p class="text-black-100 text-[18px] font-bold cursor-pointer">Gutes Brot</p>
+            </a>
+            <button class="text-sm ml-4 md:ml-0 md:text-xl flex border-black border-2 rounded-full bg-gray-500">
+                <div class="bg-yellow-200 rounded-full p-2 shadow-md">🍞</div>
+                <div class="bg-gray-700 rounded-full p-2">
+                    <span style="filter: brightness(0.5) contrast(1.5);">🍞</span>
+                  </div>
+            </button>
+            <ul class="list-none hidden sm:flex flex-row gap-10 justify-center items-center">
+                <li class="text-black-100 hover:opacity-75 text-[18px] font-medium cursor-pointer">
+                    <a href="#about">About</a>
+                </li>
+                <li class="text-black-100 hover:opacity-75 text-[18px] font-medium cursor-pointer">
+                    <a href="#skills">Skills</a>
+                </li>
+                <li class="text-black-100 hover:opacity-75 text-[18px] font-medium cursor-pointer">
+                    <a href="#projects">Projects</a>
+                </li>
+            </ul>
+            <div class="sm:hidden flex flex-1 justify-end items-center">
+                <img src="assets/menu.png" alt="menu" class="w-[28px] h-[28px] object-contain cursor-pointer">
+                <div class="hidden p-6 white-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl">
+                    <ul class="list-none flex items-start flex-col gap-4 w-full">
+                        <li class="text-black-100 font-poppins font-medium cursor-pointer w-full">
+                            <a href="#about" class="flex w-full">About</a>
+                        </li>
+                        <li class="text-black-100 font-poppins font-medium cursor-pointer w-full">
+                            <a href="#skills" class="flex w-full">Skills</a>
+                        </li>
+                        <li class="text-black-100 font-poppins font-medium cursor-pointer w-full">
+                            <a href="#projects" class="flex w-full">Projects</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="relative shrink-0 w-full h-screen mx-auto sm:px-16 px-6 pt-[120px] max-w-7xl mx-auto flex items-start justify-between">
+    <h1 class="font-black lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2 text-black-100">Hi, I am <span class="text-[#2548e3]">Gutes Brot.</span></h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laborum sint in ipsum error harum ratione, delectus sapiente, molestias, minus placeat. Fuga molestiae sunt molestias aliquam repudiandae cumque iste consequatur.</p>
+    </section>
 </body>
 </html>
