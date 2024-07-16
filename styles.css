@@ -2,12 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
+    
 body {
     margin: 0;
     background: rgb(193, 193, 246);
     text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins,sans-serif;
+    scroll-behavior: smooth
 }
 
 /* Custom styles */
@@ -15,8 +22,6 @@ body {
     color: #1a202c;
     font-size: 40px;
     font-weight: 900;
-    font-family: Poppins, sans-serif;
-    scroll-behavior: smooth;
 }
 
 .white-gradient {
