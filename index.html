@@ -6,10 +6,10 @@
     <title>Hi Gutes Brot</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/poppins.css">
-    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-white dark:bg-gray-900 text-black dark:text-white">
-    <nav class="sm:px-16 px-6 w-full flex items-center py-5 fixed top-0 z-20 bg-white bg-opacity-60 backdrop-blur dark:bg-gray-800 dark:bg-opacity-60">
+<body class="bg-white dark:bg-dark text-black dark:text-white">
+    <nav class="sm:px-16 px-6 w-full flex items-center py-5 fixed top-0 z-20 bg-white bg-opacity-10 backdrop-blur dark:bg-gray-800 dark:bg-opacity-60">
         <div class="w-full flex justify-between items-center mx-auto">
             <a class="flex items-center gap-2" href="/">
                 <img src="assets/logo.png" alt="logo" class="w-8 h-8 object-contain rounded-full shadow-lg">
@@ -50,10 +50,12 @@
             </div>            
         </div>
     </nav>
-    <section class="relative shrink-0 w-full h-screen mx-auto sm:px-16 px-6 pt-[120px] max-w-7xl flex items-start justify-between">
-        <h1 class="font-black lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2 text-black dark:text-white">Hi, I am <span class="text-[#2548e3] dark:text-[#76a9ff]">Gutes Brot.</span></h1>
-        <p class="dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laborum sint in ipsum error harum ratione, delectus sapiente, molestias, minus placeat. Fuga molestiae sunt molestias aliquam repudiandae cumque iste consequatur.</p>
-    </section>
+    <div class="z-0 bg-white dark:bg-dark bg-cover bg-no-repeat bg-center">
+        <section class="relative shrink-0 w-full h-screen mx-auto sm:px-16 px-6 pt-[120px] max-w-7xl flex items-start justify-between bg-hero">
+            <h1 class="font-black lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2 text-black dark:text-white">Hi, I am <span class="text-[#2548e3] dark:text-[#76a9ff]">Gutes Brot.</span></h1>
+            <p class="dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laborum sint in ipsum error harum ratione, delectus sapiente, molestias, minus placeat. Fuga molestiae sunt molestias aliquam repudiandae cumque iste consequatur.</p>
+        </section>
+    </div>
     <script>
         // Toggle dark mode
         const themeToggle = document.getElementById('theme-toggle');
