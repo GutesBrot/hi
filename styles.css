@@ -1,13 +1,14 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 body {
     margin: 0;
-    background: rgb(193, 193, 246);
     text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* Custom styles */
@@ -15,10 +16,27 @@ body {
     color: #1a202c;
     font-size: 40px;
     font-weight: 900;
-    font-family: Poppins, sans-serif;
-    scroll-behavior: smooth;
+}
+
+.bg-white {
+    background-image: url('./assets/bg-light-2.jpg');
+}
+
+.dark .bg-dark {
+    background-image: url('./assets/bg-dark-2.png');
 }
 
 .white-gradient {
     background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+}
+
+/* Ensure specificity for the background images */
+.bg-hero {
+    background: url('./assets/bg-light-2.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.dark .bg-hero {
+    background: url('./assets/bg-dark-2.png') no-repeat center center;
+    background-size: cover;
 }

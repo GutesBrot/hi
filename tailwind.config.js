@@ -1,14 +1,19 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', // Use 'media' if you prefer to use the user's system preference
+  content: [
+    './index.html', // Path to your HTML file
+    './assets/**/*.css', // Path to your CSS files in the assets folder
+    './styles.css' // Path to your main styles.css file
+  ],
   theme: {
     extend: {
-      fontSize: {
-        '18px': '18px',
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
-  variants: {},
+  variants: {
+    extend: {},
+  },
   plugins: [],
-}
-
-
+};
