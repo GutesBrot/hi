@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-white dark:bg-dark text-black dark:text-white">
-    <nav class="sm:px-16 px-6 w-full flex items-center py-5 fixed top-0 z-20 bg-white bg-opacity-10 backdrop-blur dark:bg-gray-800 dark:bg-opacity-60">
+    <nav class="sm:px-16 px-6 w-full flex items-center py-5 fixed top-0 z-20 white-gradient">
         <div class="w-full flex justify-between items-center mx-auto">
             <a class="flex items-center gap-2" href="/">
                 <img src="assets/logo.png" alt="logo" class="w-8 h-8 object-contain rounded-full shadow-lg">
                 <p class="text-black text-[18px] font-bold cursor-pointer dark:text-white">Gutes Brot</p>
             </a>
-            <button id="theme-toggle" class="text-sm ml-4 md:ml-0 md:text-xl flex border-black border-2 rounded-full bg-gray-500 dark:bg-gray-700">
-                <div class="bg-yellow-200 rounded-full p-2 shadow-md">🍞</div>
-                <div class="bg-gray-700 rounded-full p-2 dark:bg-yellow-300">
+            <button id="theme-toggle" class="text-sm ml-4 md:ml-0 md:text-xl flex border-black border-2 rounded-full bg-gray-300">
+                <div class="toggle-light rounded-full p-2 shadow-md">🍞</div>
+                <div class="toggle-dark  rounded-full p-2 ">
                     <span style="filter: brightness(0.5) contrast(1.5);">🍞</span>
                 </div>
             </button>
@@ -34,7 +34,7 @@
             </ul>
             <div class="sm:hidden flex flex-1 justify-end items-center">
                 <img src="assets/menu.png" alt="menu" class="w-12 h-12 object-contain cursor-pointer">
-                <div class="hidden p-6 white-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl dark:bg-gray-800">
+                <div class="hidden p-6 white-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl">
                     <ul class="list-none flex items-start flex-col gap-4 w-full">
                         <li class="text-black font-poppins font-medium cursor-pointer w-full dark:text-white">
                             <a href="#about" class="flex w-full">About</a>
@@ -50,10 +50,12 @@
             </div>            
         </div>
     </nav>
-    <div class="z-0 bg-white dark:bg-dark bg-cover bg-no-repeat bg-center">
-        <section class="relative shrink-0 w-full h-screen mx-auto sm:px-16 px-6 pt-[120px] max-w-7xl flex items-start justify-between bg-hero">
-            <h1 class="font-black lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2 text-black dark:text-white">Hi, I am <span class="text-[#2548e3] dark:text-[#76a9ff]">Gutes Brot.</span></h1>
-            <p class="dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laborum sint in ipsum error harum ratione, delectus sapiente, molestias, minus placeat. Fuga molestiae sunt molestias aliquam repudiandae cumque iste consequatur.</p>
+    <div class="z-0 bg-hero bg-cover bg-no-repeat bg-center">
+        <section class="relative shrink-0 w-full h-screen mx-auto sm:px-16 px-6 pt-[120px] max-w-7xl flex items-start justify-between">
+            <div>
+                <h1 class="font-black lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2 text-black dark:text-white">Hi, I am <span class="text-[#2548e3] dark:text-[#76a9ff]">Gutes Brot.</span></h1>
+                <p class="text-black dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laborum sint in ipsum error harum ratione, delectus sapiente, molestias, minus placeat. Fuga molestiae sunt molestias aliquam repudiandae cumque iste consequatur.</p>
+            </div>
         </section>
     </div>
     <script>

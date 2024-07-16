@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css */
 body {
     margin: 0;
     text-align: center;
@@ -18,6 +23,24 @@ body {
     font-weight: 900;
 }
 
+.toggle-light {
+    background:darkkhaki;
+}
+
+.dark .toggle-light {
+    opacity: 0;
+}
+
+.toggle-dark {
+    opacity: 0;
+}
+
+.dark .toggle-dark {
+    opacity: 1;
+    background: rgb(59, 59, 59);
+}
+
+
 .bg-white {
     background-image: url('./assets/bg-light-2.jpg');
 }
@@ -27,7 +50,11 @@ body {
 }
 
 .white-gradient {
-    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+    background: linear-gradient(to bottom, #ffffff 50%, rgba(255,255,255,0.85) 70%, rgba(0,0,0,0));
+}
+
+.dark .white-gradient {
+    background: linear-gradient(to bottom, #000000 50%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0));
 }
 
 /* Ensure specificity for the background images */
@@ -39,4 +66,28 @@ body {
 .dark .bg-hero {
     background: url('./assets/bg-dark-2.png') no-repeat center center;
     background-size: cover;
+}
+
+.text-black {
+    color: #000000;
+}
+
+.dark .text-black {
+    color: #ffffff;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.dark .text-white {
+    color: #000000;
+}
+
+.text-gray-300 {
+    color: #d1d5db;
+}
+
+.dark .text-gray-300 {
+    color: #4b5563;
 }
