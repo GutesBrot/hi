@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hi Gutes Brot - Personal Portfolio">
+    <meta property="og:title" content="Hi Gutes Brot">
+    <meta property="og:description" content="Hi Gutes Brot - Personal Portfolio">
+    <meta property="og:image" content="assets/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Hi Gutes Brot</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/poppins.css">
@@ -15,9 +20,9 @@
                 <img src="assets/logo.png" alt="logo" class="w-8 h-8 object-contain rounded-full shadow-lg">
                 <p class="text-black text-[18px] font-bold cursor-pointer dark:text-white">Gutes Brot</p>
             </a>
-            <button id="theme-toggle" class="text-sm ml-4 md:ml-0 md:text-xl flex border-black border-2 rounded-full bg-gray-300">
+            <button id="theme-toggle" class="text-sm ml-4 md:ml-0 md:text-xl flex border-black border-2 rounded-full bg-gray-300" aria-label="Toggle Theme">
                 <div class="toggle-light rounded-full p-1 shadow-md">🍞</div>
-                <div class="toggle-dark  rounded-full p-1 ">
+                <div class="toggle-dark rounded-full p-1">
                     <span style="filter: brightness(0.5) contrast(1.5);">🍞</span>
                 </div>
             </button>
@@ -59,33 +64,11 @@
         </section>
     </div>
     <div class="spacer layer1"></div>
-    <section class="bg-intro py-16 pt-[120px] relative z-0">
+    <section id="about" class="bg-intro py-16 pt-[120px] relative z-0">
         <div class="container mx-auto">
             <p class="text-black dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laborum sint in ipsum error harum ratione, delectus sapiente, molestias, minus placeat. Fuga molestiae sunt molestias aliquam repudiandae cumque iste consequatur.</p>
         </div>
     </section>
-    <script>
-        // Toggle dark mode
-        const themeToggle = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
-
-        themeToggle.addEventListener('click', () => {
-            if (htmlElement.classList.contains('dark')) {
-                htmlElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                htmlElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-
-        // Set the initial theme based on localStorage
-        const storedTheme = localStorage.getItem('theme');
-        if (storedTheme === 'dark') {
-            htmlElement.classList.add('dark');
-        } else {
-            htmlElement.classList.remove('dark');
-        }
-    </script>
+    <script src="assets/theme-toggle.js"></script>
 </body>
 </html>
