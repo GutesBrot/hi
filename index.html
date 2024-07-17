@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi Gutes Brot</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/poppins.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,8 +16,8 @@
                 <p class="text-black text-[18px] font-bold cursor-pointer dark:text-white">Gutes Brot</p>
             </a>
             <button id="theme-toggle" class="text-sm ml-4 md:ml-0 md:text-xl flex border-black border-2 rounded-full bg-gray-300">
-                <div class="toggle-light rounded-full p-2 shadow-md">🍞</div>
-                <div class="toggle-dark  rounded-full p-2 ">
+                <div class="toggle-light rounded-full p-1 shadow-md">🍞</div>
+                <div class="toggle-dark  rounded-full p-1 ">
                     <span style="filter: brightness(0.5) contrast(1.5);">🍞</span>
                 </div>
             </button>
@@ -53,11 +53,17 @@
     <div class="z-0 bg-hero bg-cover bg-no-repeat bg-center">
         <section class="relative shrink-0 w-full h-screen mx-auto sm:px-16 px-6 pt-[120px] max-w-7xl flex items-start justify-between">
             <div>
-                <h1 class="font-black lg:text-[80px] sm:text-[60px] xs:text-[50px] text-[40px] lg:leading-[98px] mt-2 text-black dark:text-white">Hi, I am <span class="text-[#2548e3] dark:text-[#76a9ff]">Gutes Brot.</span></h1>
+                <h1 class="font-black lg:text-[60px] sm:text-[50px] xs:text-[40px] text-[36px] lg:leading-[98px] mt-2 text-black dark:text-white">Hi, I am <span class="text-[#2548e3] dark:text-[#76a9ff]">Gutes Brot.</span></h1>
                 <p class="text-black dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laborum sint in ipsum error harum ratione, delectus sapiente, molestias, minus placeat. Fuga molestiae sunt molestias aliquam repudiandae cumque iste consequatur.</p>
             </div>
         </section>
     </div>
+    <div class="spacer layer1"></div>
+    <section class="bg-intro py-16 pt-[120px] relative z-0">
+        <div class="container mx-auto">
+            <p class="text-black dark:text-gray-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae laborum sint in ipsum error harum ratione, delectus sapiente, molestias, minus placeat. Fuga molestiae sunt molestias aliquam repudiandae cumque iste consequatur.</p>
+        </div>
+    </section>
     <script>
         // Toggle dark mode
         const themeToggle = document.getElementById('theme-toggle');
