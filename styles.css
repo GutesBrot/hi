@@ -24,7 +24,7 @@ body {
 }
 
 .toggle-light {
-    background:darkkhaki;
+    background:rgb(231, 210, 18);
 }
 
 .dark .toggle-light {
@@ -46,7 +46,7 @@ body {
 }
 
 .dark .bg-dark {
-    background-image: url('./assets/bg-dark-2.png');
+    background-image: url('./assets/bg-dark-2.jpg');
 }
 
 .white-gradient {
@@ -64,7 +64,7 @@ body {
 }
 
 .dark .bg-hero {
-    background: url('./assets/bg-dark-2.png') no-repeat center center;
+    background: url('./assets/bg-dark-2.jpg') no-repeat center center;
     background-size: cover;
 }
 
@@ -91,3 +91,5 @@ body {
 .dark .text-gray-300 {
     color: #4b5563;
 }
+
+
