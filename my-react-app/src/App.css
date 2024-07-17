@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-black: #1a202c;
+  --color-white: #ffffff;
+  --color-dark: #000000;
+  --color-light-bg: #e7d212;
+  --color-dark-bg: #3b3b3b;
+  --color-blue: #2548e3;
+  --color-blue-light: #76a9ff;
+  --color-gray: #d1d5db;
+  --color-gray-dark: #4b5563;
+  --intro-light-bg: #4f96ff;
+  --intro-dark-bg: #002358;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.text-black-100 {
+  color: var(--color-black);
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.toggle-light {
+  background: var(--color-light-bg);
+}
+
+.dark .toggle-light {
+  opacity: 0;
+}
+
+.toggle-dark {
+  opacity: 0;
+}
+
+.dark .toggle-dark {
+  opacity: 1;
+  background: var(--color-dark-bg);
+}
+
+.bg-white {
+  background-image: url('./assets/bg-light-2.webp');
+}
+
+.dark .bg-white {
+  background-image: url('./assets/bg-dark-2.webp');
+}
+
+.white-gradient {
+  background: linear-gradient(to bottom, var(--color-white) 50%, rgba(255, 255, 255, 0.85) 70%, rgba(0, 0, 0, 0));
+}
+
+.dark .white-gradient {
+  background: linear-gradient(to bottom, var(--color-dark) 50%, rgba(0, 0, 0, 0.85) 70%, rgba(0, 0, 0, 0));
+}
+
+.bg-hero {
+  background: url('./assets/bg-light-2.webp') no-repeat center center;
+  background-size: cover;
+}
+
+.dark .bg-hero {
+  background: url('./assets/bg-dark-2.webp') no-repeat center center;
+  background-size: cover;
+}
+
+.bg-hero, .dark .bg-hero {
+  transition: background-image 0.5s ease-in-out;
+}
+
+.text-black {
+  color: var(--color-black);
+}
+
+.dark .text-black {
+  color: var(--color-white);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.dark .text-white {
+  color: var(--color-black);
+}
+
+.text-gray-300 {
+  color: var(--color-gray);
+}
+
+.dark .text-gray-300 {
+  color: var(--color-gray-dark);
+}
+
+.spacer {
+  width: 100%;
+  aspect-ratio: 1000/300;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 300px; /* Adjust height as needed */
+  position: relative;
+  z-index: 10;
+  margin-top: -100px; /* Adjust to overlap previous section */
+}
+
+.bg-intro {
+  background-color: var(--intro-light-bg);
+  position: relative;
+  z-index: 5;
+  padding-top: 150px; /* Adjust to create space for the spacer */
+}
+
+.dark .bg-intro {
+  background-color: var(--intro-dark-bg);
+}
+
+.layer1 {
+  background: url('./assets/layer1.svg');
+}
+
+.dark .layer1 {
+  background: url('./assets/layer1-dark.svg');
+}
+
+.white-gradient, .dark .white-gradient, .layer1, .dark .layer1, .bg-intro, .dark .bg-intro {
+  transition: background-color 0.5s ease-in-out, background-image 0.5s ease-in-out;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
