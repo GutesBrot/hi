@@ -42,11 +42,11 @@ body {
 
 
 .bg-white {
-    background-image: url('./assets/bg-light-2.jpg');
+    background-image: url('./assets/bg-light-2.webp');
 }
 
 .dark .bg-dark {
-    background-image: url('./assets/bg-dark-2.png');
+    background-image: url('./assets/bg-dark-2.webp');
 }
 
 .white-gradient {
@@ -59,12 +59,12 @@ body {
 
 /* Ensure specificity for the background images */
 .bg-hero {
-    background: url('./assets/bg-light-2.jpg') no-repeat center center;
+    background: url('./assets/bg-light-2.webp') no-repeat center center;
     background-size: cover;
 }
 
 .dark .bg-hero {
-    background: url('./assets/bg-dark-2.png') no-repeat center center;
+    background: url('./assets/bg-dark-2.webp') no-repeat center center;
     background-size: cover;
 }
 
