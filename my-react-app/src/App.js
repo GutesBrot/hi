@@ -3,7 +3,8 @@ import { ThemeProvider } from './ThemeContext';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import About from './components/About';
-import SectionDivider from './components/SectionDivider'; // Import the Section Divider
+import SectionDivider from './components/SectionDivider';
+import SectionDivider2 from './components/SectionDivider2'; 
 import './App.css';
 
 function App() {
@@ -11,9 +12,9 @@ function App() {
         <ThemeProvider>
             <NavBar />
             <Hero />
-            <SectionDivider /> {/* Add the Section Divider here */}
+            <SectionDivider /> 
             <About />
-            {/* Other components */}
+            <SectionDivider2 />
         </ThemeProvider>
     );
 }

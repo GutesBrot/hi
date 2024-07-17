@@ -1,6 +1,4 @@
 import React from 'react';
-import NavBar from './NavBar'; // Correct path
-import Hero from './Hero'; // Correct path
 import '../App.css'; // Correct path
 
 const About = () => {
