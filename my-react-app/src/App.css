@@ -82,6 +82,21 @@ body {
   transition: background-image 0.5s ease-in-out;
 }
 
+.icon-leetcode {
+  background: url('/src/assets/leetcodeLight.svg') no-repeat center;
+  background-size: contain;
+  width: 28px; /* 7 * 4 */
+  height: 40px; /* 10 * 4 */
+}
+
+.dark .icon-leetcode {
+  background: url('/src/assets/leetcodeDark.svg') no-repeat center;
+  background-size: contain;
+  width: 28px; /* 7 * 4 */
+  height: 40px; /* 10 * 4 */
+}
+
+
 .text-black {
   color: var(--color-black);
 }
@@ -92,10 +107,6 @@ body {
 
 .text-white {
   color: var(--color-white);
-}
-
-.dark .text-white {
-  color: var(--color-black);
 }
 
 .text-gray-300 {

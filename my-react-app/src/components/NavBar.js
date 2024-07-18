@@ -36,18 +36,18 @@ function NavBar() {
                         <a href="#projects">Projects</a>
                     </li>
                 </ul>
-                <div class="sm:hidden flex flex-1 justify-end items-center">
-                <img src={menu} alt="menu" className="w-12 h-12 object-contain cursor-pointer" />
-                <div class="hidden p-6 white-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl">
-                    <ul class="list-none flex items-start flex-col gap-4 w-full">
-                        <li class="text-black font-poppins font-medium cursor-pointer w-full dark:text-white">
-                            <a href="#about" class="flex w-full">About</a>
+                <div className="sm:hidden flex flex-1 justify-end items-center">
+                <img src={menu} alt="menu" className="w-12 h-12 object-contain cursor-pointer dark:invert" />
+                <div className="hidden p-6 white-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl">
+                    <ul className="list-none flex items-start flex-col gap-4 w-full">
+                        <li className="text-black font-poppins font-medium cursor-pointer w-full dark:text-white">
+                            <a href="#about" className="flex w-full">About</a>
                         </li>
-                        <li class="text-black font-poppins font-medium cursor-pointer w-full dark:text-white">
-                            <a href="#skills" class="flex w-full">Skills</a>
+                        <li className="text-black font-poppins font-medium cursor-pointer w-full dark:text-white">
+                            <a href="#skills" className="flex w-full">Skills</a>
                         </li>
-                        <li class="text-black font-poppins font-medium cursor-pointer w-full dark:text-white">
-                            <a href="#projects" class="flex w-full">Projects</a>
+                        <li className="text-black font-poppins font-medium cursor-pointer w-full dark:text-white">
+                            <a href="#projects" className="flex w-full">Projects</a>
                         </li>
                     </ul>
                 </div>
