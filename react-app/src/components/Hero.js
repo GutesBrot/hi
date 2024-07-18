@@ -11,6 +11,8 @@ import linkedin from '../assets/linkedin.svg';
 import githubLight from '../assets/githubLight.svg';
 import mail from '../assets/mail.webp';
 
+
+
 const Hero = () => {
     const { isDarkMode } = useTheme();
 
@@ -20,7 +22,7 @@ const Hero = () => {
             <section className={`relative shrink-0 w-full h-screen mx-auto px-6 pt-[120px] max-w-7xl flex items-start justify-between`}>
                 <div className="flex flex-col md:flex-row justify-between items-center mt-5 gap-3">
                     <div className="flex flex-col gap-3 md:gap-5">
-                        <h1 className={`text-4xl md:text-5xl lg:text-6xl font-black ${isDarkMode ? "text-white" : "text-black"}`}>
+                        <h1 className={`text-4xl md:text-4xl lg:text-5xl font-black ${isDarkMode ? "text-white" : "text-black"}`}>
                             Hi, I am <span className="text-[#2548e3]">Gutes Brot.</span>
                         </h1>
                         <div className="flex gap-5 md:gap-7 justify-start items-center">
@@ -54,7 +56,6 @@ const Hero = () => {
                         </p>
 
                     </div>
-                    
                 </div>
             </section>
         </div>
