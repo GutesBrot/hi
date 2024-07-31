@@ -173,10 +173,11 @@ body {
 }
 
 .working-woman-image {
+  src: url('./assets/layer1-dark.svg');
   width: 200px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   position: absolute;
-  right: 2%; /* Move to the right of the center */
-  top: 70%; /* Center vertically */
-  transform: translateY(-50%); /* Adjust for proper centering */
+  left: 50%; /* Center horizontally */
+  top: 60%; /* Center vertically */
+  transform: translate(-50%, -50%); /* Adjust for proper centering */
 }
