@@ -126,7 +126,7 @@ body {
   height: 300px; /* Adjust height as needed */
   position: relative;
   z-index: 10;
-  margin-top: -100px; /* Adjust to overlap previous section */
+  margin-top: -120px; /* Adjust to overlap previous section */
 }
 
 .bg-intro {
@@ -141,11 +141,11 @@ body {
 }
 
 .layer1 {
-  background: url('./assets/layer1.svg');
+  background: url('./assets/layer1.svg') no-repeat;
 }
 
 .dark .layer1 {
-  background: url('./assets/layer1-dark.svg');
+  background: url('./assets/layer1-dark.svg') no-repeat;
 }
 
 .white-gradient, .dark .white-gradient, .layer1, .dark .layer1, .bg-intro, .dark .bg-intro {
@@ -173,11 +173,22 @@ body {
 }
 
 .working-woman-image {
-  src: url('./assets/layer1-dark.svg');
   width: 200px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   position: absolute;
-  left: 50%; /* Center horizontally */
-  top: 60%; /* Center vertically */
-  transform: translate(-50%, -50%); /* Adjust for proper centering */
+  z-index: 2;
+ }
+
+.blob-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw;  /* Full viewport width */
+  position: relative;
+}
+
+#visual {
+  position: absolute; /* Overlay it in the center */
+  z-index: 1;
 }
