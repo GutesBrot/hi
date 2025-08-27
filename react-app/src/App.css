@@ -126,7 +126,7 @@ body {
   height: 300px; /* Adjust height as needed */
   position: relative;
   z-index: 10;
-  margin-top: -100px; /* Adjust to overlap previous section */
+  margin-top: -120px; /* Adjust to overlap previous section */
 }
 
 .bg-intro {
@@ -141,11 +141,11 @@ body {
 }
 
 .layer1 {
-  background: url('./assets/layer1.svg');
+  background: url('./assets/layer1.svg') no-repeat;
 }
 
 .dark .layer1 {
-  background: url('./assets/layer1-dark.svg');
+  background: url('./assets/layer1-dark.svg') no-repeat;
 }
 
 .white-gradient, .dark .white-gradient, .layer1, .dark .layer1, .bg-intro, .dark .bg-intro {
@@ -168,6 +168,51 @@ body {
 }
 
 .flip {
-  transform: rotate(180deg);
-  margin-top: 0px; /* Adjust to overlap previous section */
+  transform: scaleY(-1);           /* or scaleX(-1) if you prefer horizontal flip */
+  transform-origin: center;         /* keep it centered */
+  backface-visibility: hidden;      /* avoid anti-alias seams */
+  will-change: transform;
+  margin-top: 0;                    /* keep your margin tweak if you want */
 }
+
+.working-woman-image {
+  width: 180px;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+
+  /* center the image first */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* then offset slightly from the center */
+  /* adjust these numbers as needed */
+  margin-top: -25px;  /* moves it up */
+  margin-left: 30px;  /* moves it left */
+}
+.dark .working-woman-image {
+  content: url('./assets/clipart-work-dark.webp'); /* dark mode */
+}
+
+.blob-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw;  /* Full viewport width */
+  position: relative;
+}
+.blob-container path {
+  fill: #72bbe4; /* light */
+}
+
+.dark .blob-container path {
+  fill: #3761A5; /* dark */
+}
+
+#visual {
+  position: absolute; /* Overlay it in the center */
+  z-index: 1;
+}
+
