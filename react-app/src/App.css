@@ -133,7 +133,20 @@ body {
   background-color: var(--intro-light-bg);
   position: relative;
   z-index: 5;
-  padding-top: 150px;
+  padding-top: 80px;
+}
+
+/* Responsive padding for larger screens */
+@media (min-width: 640px) {
+  .bg-intro {
+    padding-top: 120px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bg-intro {
+    padding-top: 150px;
+  }
 }
 
 .dark .bg-intro {
@@ -153,7 +166,20 @@ body {
 }
 
 section {
-  padding: 4rem 0;
+  padding: 2rem 0;
+}
+
+/* Responsive padding for larger screens */
+@media (min-width: 640px) {
+  section {
+    padding: 3rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    padding: 4rem 0;
+  }
 }
 
 body {
@@ -176,7 +202,7 @@ body {
 }
 
 .working-woman-image {
-  width: 180px;
+  width: 120px;
   height: auto;
   position: absolute;
   z-index: 2;
@@ -191,6 +217,19 @@ body {
   margin-top: -25px;  /* moves it up */
   margin-left: 30px;  /* moves it left */
 }
+
+/* Responsive sizing for larger screens */
+@media (min-width: 640px) {
+  .working-woman-image {
+    width: 150px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .working-woman-image {
+    width: 180px;
+  }
+}
 .dark .working-woman-image {
   content: url('./assets/clipart-work-dark.webp'); /* dark mode */
 }
@@ -199,9 +238,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  height: 60vh; /* Reduced height for mobile */
   width: 100vw;  /* Full viewport width */
   position: relative;
+}
+
+/* Responsive height for larger screens */
+@media (min-width: 640px) {
+  .blob-container {
+    height: 80vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blob-container {
+    height: 100vh;
+  }
 }
 .blob-container path {
   fill: #72bbe4; /* light */
