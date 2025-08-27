@@ -71,16 +71,19 @@ body {
 .bg-hero {
   background: url('./assets/bg-light-2.webp') no-repeat center center;
   background-size: cover;
+  will-change: background-image;
+  transform: translateZ(0); /* Enable hardware acceleration */
 }
 
 .dark .bg-hero {
   background: url('./assets/bg-dark-2.webp') no-repeat center center;
   background-size: cover;
+  will-change: background-image;
+  transform: translateZ(0); /* Enable hardware acceleration */
 }
 
-.bg-hero, .dark .bg-hero {
-  transition: background-image 0.5s ease-in-out;
-}
+
+
 
 .icon-leetcode {
   background: url('/src/assets/leetcodeLight.svg') no-repeat center;
@@ -162,7 +165,19 @@ body {
 }
 
 .white-gradient, .dark .white-gradient, .layer1, .dark .layer1, .bg-intro, .dark .bg-intro {
-  transition: background-color 0.5s ease-in-out, background-image 0.5s ease-in-out;
+  transition: background-color 0.2s ease-in-out, background-image 0.2s ease-in-out;
+}
+
+/* Slower transitions on mobile for smoother experience */
+@media (max-width: 639px) {
+  .white-gradient, .dark .white-gradient, .layer1, .dark .layer1, .bg-intro, .dark .bg-intro {
+    transition: background-color 0.4s ease-in-out, background-image 0.4s ease-in-out;
+  }
+  
+  /* Slower image transitions on mobile */
+  .transition-opacity {
+    transition-duration: 0.5s !important;
+  }
 }
 
 section {
@@ -182,16 +197,7 @@ section {
   }
 }
 
-body {
-  opacity: 0;
-  animation: fadeIn 2s ease-out forwards;
-}
 
-@keyframes fadeIn {
-  to {
-      opacity: 1;
-  }
-}
 
 .flip {
   transform: scaleY(-1);           /* or scaleX(-1) if you prefer horizontal flip */
@@ -202,7 +208,7 @@ body {
 }
 
 .working-woman-image {
-  width: 120px;
+  width: 80px;
   height: auto;
   position: absolute;
   z-index: 2;
@@ -221,7 +227,7 @@ body {
 /* Responsive sizing for larger screens */
 @media (min-width: 640px) {
   .working-woman-image {
-    width: 150px;
+    width: 140px;
   }
 }
 
@@ -267,4 +273,5 @@ body {
   position: absolute; /* Overlay it in the center */
   z-index: 1;
 }
+
 

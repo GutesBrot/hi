@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTheme } from '../ThemeContext';
 import { Link } from 'react-router-dom';
 import TypingEffect from 'react-typing-effect';
@@ -10,14 +10,62 @@ import leetcodeDark from '../assets/leetcodeDark.svg';
 import linkedin from '../assets/linkedin.svg';
 import githubLight from '../assets/githubLight.svg';
 import mail from '../assets/mail.webp';
+import bgLight from '../assets/bg-light-2.webp';
+import bgDark from '../assets/bg-dark-2.webp';
 
 
 
 const Hero = () => {
     const { isDarkMode } = useTheme();
+    const [isAlternativeLoaded, setIsAlternativeLoaded] = useState(false);
+    const [hasInitialRender, setHasInitialRender] = useState(false);
+
+    // Mark initial render as complete
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setHasInitialRender(true);
+        }, 100);
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        // Only load alternative background after initial render is complete
+        if (!hasInitialRender) return;
+        
+        const alternativeBg = isDarkMode ? bgLight : bgDark;
+        const img = new Image();
+        img.onload = () => {
+            setIsAlternativeLoaded(true);
+        };
+        img.src = alternativeBg;
+    }, [isDarkMode, hasInitialRender]);
 
     return (
-        <div className={`z-0 bg-hero bg-cover bg-no-repeat bg-center`}>
+        <div className="z-0 relative overflow-hidden">
+            {/* Light background as img element */}
+            <img 
+                src={bgLight}
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+                style={{ 
+                    display: 'block',
+                    opacity: (!isDarkMode || !isAlternativeLoaded) ? 1 : 0
+                }}
+            />
+            
+            {/* Dark background as img element */}
+            {hasInitialRender && (
+                <img 
+                    src={bgDark}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+                    style={{ 
+                        display: 'block',
+                        opacity: (isDarkMode && isAlternativeLoaded) ? 1 : 0
+                    }}
+                />
+            )}
+            
             <div className={`absolute inset-0 bg-gradient-to-b from-transparent from-60% ${isDarkMode ? "to-black" : "to-white"}`}></div>
             <section className={`relative shrink-0 w-full h-screen mx-auto px-6 pt-[120px] max-w-7xl flex items-start justify-between`}>
                 <div className="flex flex-col md:flex-row justify-between items-center mt-5 gap-3">

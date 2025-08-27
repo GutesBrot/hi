@@ -1,10 +1,84 @@
-import React from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useTheme } from '../ThemeContext'; 
 import logo from '../assets/logo.png'; 
 import menu from '../assets/menu.png'; 
 
 function NavBar() {
   const { isDarkMode, toggleTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartX, setDragStartX] = useState(0);
+  const menuRef = useRef(null);
+  const toggleRef = useRef(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    let timeoutId;
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+      
+      // Auto-hide menu after 5 seconds if nothing is clicked
+      timeoutId = setTimeout(() => {
+        setIsMenuOpen(false);
+      }, 5000);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [isMenuOpen]);
+
+  // Drag handlers for theme toggle
+  const handleDragStart = useCallback((e) => {
+    setIsDragging(true);
+    const clientX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+    setDragStartX(clientX);
+  }, []);
+
+  const handleDragMove = useCallback((e) => {
+    if (!isDragging) return;
+    
+    const clientX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+    const deltaX = clientX - dragStartX;
+    const threshold = 20; // Minimum drag distance to trigger toggle
+    
+    if (Math.abs(deltaX) > threshold) {
+      toggleTheme();
+      setIsDragging(false);
+    }
+  }, [isDragging, dragStartX, toggleTheme]);
+
+  const handleDragEnd = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  useEffect(() => {
+    if (isDragging) {
+      document.addEventListener('mousemove', handleDragMove);
+      document.addEventListener('mouseup', handleDragEnd);
+      document.addEventListener('touchmove', handleDragMove);
+      document.addEventListener('touchend', handleDragEnd);
+      
+      return () => {
+        document.removeEventListener('mousemove', handleDragMove);
+        document.removeEventListener('mouseup', handleDragEnd);
+        document.removeEventListener('touchmove', handleDragMove);
+        document.removeEventListener('touchend', handleDragEnd);
+      };
+    }
+  }, [isDragging, dragStartX, handleDragMove, handleDragEnd]);
 
   return (
     <nav className="sm:px-16 px-6 w-full flex items-center py-8 fixed top-0 z-20 white-gradient">
@@ -16,10 +90,13 @@ function NavBar() {
 
         {/* Toggle: outer ring + inner track + thumbs */}
         <button
+          ref={toggleRef}
           id="theme-toggle"
           aria-label="Toggle Theme"
           onClick={toggleTheme}
-          className="relative ml-4 md:ml-0 rounded-full h-10 w-20"
+          onMouseDown={handleDragStart}
+          onTouchStart={handleDragStart}
+          className={`relative ml-4 md:ml-0 rounded-full h-10 w-20 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
         >
           {/* Outer ring (drawn under, so inner size unaffected by border math) */}
           <span className="absolute inset-0 rounded-full bg-black" aria-hidden="true" />
@@ -62,18 +139,23 @@ function NavBar() {
         </ul>
 
         {/* Mobile menu */}
-        <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img src={menu} alt="menu" className="w-12 h-12 object-contain cursor-pointer dark:invert" />
-          <div className="hidden p-6 white-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl">
+        <div className="sm:hidden flex flex-1 justify-end items-center" ref={menuRef}>
+          <img 
+            src={menu} 
+            alt="menu" 
+            className="w-12 h-12 object-contain cursor-pointer dark:invert transition-transform duration-200 hover:scale-105" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          />
+          <div className={`${isMenuOpen ? 'flex opacity-100' : 'hidden opacity-0'} p-6 bg-white dark:bg-black absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl shadow-lg transition-all duration-200 ease-in-out`}>
             <ul className="list-none flex items-start flex-col gap-4 w-full">
-              <li className="text-black font-poppins font-medium cursor-pointer w-full dark:text-white">
-                <a href="#about" className="flex w-full">About</a>
+              <li className="text-black font-poppins font-medium cursor-pointer w-full dark:text-white hover:opacity-75">
+                <a href="#about" className="flex w-full" onClick={() => setIsMenuOpen(false)}>About</a>
               </li>
-              <li className="text-black font-poppins font-medium cursor-pointer w-full dark:text-white">
-                <a href="#skills" className="flex w-full">Skills</a>
+              <li className="text-black font-poppins font-medium cursor-pointer w-full dark:text-white hover:opacity-75">
+                <a href="#skills" className="flex w-full" onClick={() => setIsMenuOpen(false)}>Skills</a>
               </li>
-              <li className="text-black font-poppins font-medium cursor-pointer w-full dark:text-white">
-                <a href="#projects" className="flex w-full">Projects</a>
+              <li className="text-black font-poppins font-medium cursor-pointer w-full dark:text-white hover:opacity-75">
+                <a href="#projects" className="flex w-full" onClick={() => setIsMenuOpen(false)}>Projects</a>
               </li>
             </ul>
           </div>
