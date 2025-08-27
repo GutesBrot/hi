@@ -168,16 +168,32 @@ body {
 }
 
 .flip {
-  transform: rotate(180deg);
-  margin-top: 0px; /* Adjust to overlap previous section */
+  transform: scaleY(-1);           /* or scaleX(-1) if you prefer horizontal flip */
+  transform-origin: center;         /* keep it centered */
+  backface-visibility: hidden;      /* avoid anti-alias seams */
+  will-change: transform;
+  margin-top: 0;                    /* keep your margin tweak if you want */
 }
 
 .working-woman-image {
-  width: 200px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 180px;
+  height: auto;
   position: absolute;
   z-index: 2;
- }
+
+  /* center the image first */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* then offset slightly from the center */
+  /* adjust these numbers as needed */
+  margin-top: -25px;  /* moves it up */
+  margin-left: 30px;  /* moves it left */
+}
+.dark .working-woman-image {
+  content: url('./assets/clipart-work-dark.webp'); /* dark mode */
+}
 
 .blob-container {
   display: flex;
@@ -187,8 +203,16 @@ body {
   width: 100vw;  /* Full viewport width */
   position: relative;
 }
+.blob-container path {
+  fill: #72bbe4; /* light */
+}
+
+.dark .blob-container path {
+  fill: #3761A5; /* dark */
+}
 
 #visual {
   position: absolute; /* Overlay it in the center */
   z-index: 1;
 }
+
